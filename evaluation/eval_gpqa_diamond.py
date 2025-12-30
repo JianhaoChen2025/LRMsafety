@@ -10,7 +10,7 @@ from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
-DEFAULT_DATA_PATH = "./data/gpqa-use.csv"  # Update this path according to your setup
+DEFAULT_DATA_PATH = "./data/gpqa-diamond.csv"  # Update this path according to your setup
 REQUIRED_COLUMNS = ["Index", "Question", "Option A", "Option B", "Option C", "Option D"]
 CHOICE_LABELS = ["A", "B", "C", "D"]
 BOXED_PATTERN = re.compile(r"\\boxed\{([A-D])\}", flags=re.IGNORECASE)
@@ -134,7 +134,7 @@ def load_answer_key(path: Optional[str]) -> Dict[int, str]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Evaluate a causal LM on the GPQA USE multiple-choice dataset."
+        description="Evaluate a causal LM on the GPQA Diamond multiple-choice dataset."
     )
     parser.add_argument(
         "--model",
@@ -146,13 +146,13 @@ def main() -> None:
         "--data",
         type=str,
         default=DEFAULT_DATA_PATH,
-        help=f"Path to the GPQA USE CSV file (default: {DEFAULT_DATA_PATH}).",
+        help=f"Path to the GPQA Diamond CSV file (default: {DEFAULT_DATA_PATH}).",
     )
     parser.add_argument(
         "--output",
         type=str,
         default=None,
-        help="Path to save evaluation results. Defaults to 'results/<model>/gpqa-use.csv'.",
+        help="Path to save evaluation results. Defaults to 'results/<model>/gpqa-diamond.csv'.",
     )
     parser.add_argument(
         "--start",
@@ -232,7 +232,7 @@ def main() -> None:
     output_path = (
         args.output
         if args.output is not None
-        else os.path.join(results_dir, "gpqa-use.csv")
+        else os.path.join(results_dir, "gpqa-Diamond.csv")
     )
 
     answer_key_map = load_answer_key(args.answer_key)
@@ -305,7 +305,7 @@ def main() -> None:
     newly_completed = []
     missing_answer_indices = set()
 
-    progress_bar = tqdm(total=len(rows_to_process), desc="Evaluating GPQA USE")
+    progress_bar = tqdm(total=len(rows_to_process), desc="Evaluating GPQA Diamond")
 
     for batch_start in range(0, len(rows_to_process), args.batch_size):
         batch_records = rows_to_process[batch_start : batch_start + args.batch_size]

@@ -32,7 +32,7 @@ model_name = args.model_name
 dataset = args.dataset # Used for output file name
 num_workers = args.workers
 # Fixed input data path - please update this path according to your setup
-input_data_path = './data/ARC-Challenge-validation.csv'
+input_data_path = './benchmarks/ARC-Challenge-validation.csv'
 
 # Ensure results directory exists
 model_safe_name = model_name.replace('/', '_')
