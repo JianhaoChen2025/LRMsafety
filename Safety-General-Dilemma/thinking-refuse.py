@@ -113,8 +113,8 @@ def process_file(filepath, column_to_analyze, output_dir):
 # ==================== Run the Script ====================
 if __name__ == "__main__":
     # Define file paths and output directory - please update these paths according to your setup
-    file1_path = "./results/JBB-0818_concrete_0-100.csv"
-    file2_path = "./results/JBB-0818_question_0-100.csv"
+    file1_path = "./results/JBB-concrete.csv"
+    file2_path = "./results/JBB-question.csv"
     output_directory = "./output"
 
     # Process the first file (analyze the "reasoning" column)

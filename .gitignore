@@ -1,2 +1,3 @@
 *.csv
 RAJ/data/extracted_files/
+*.parquet
