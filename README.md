@@ -103,6 +103,7 @@ Supported datasets include:
 - UWNSL/SafeChain
 - UCSC-VLAA/STAR-1
 - raj-tomar001/UnSafeChain
+- PGA-1000/2000/3000/Full
 
 ## 🔧 Usage Examples
 
@@ -199,22 +200,13 @@ This project supports evaluation on multiple safety benchmarks:
 - Update all file paths in scripts to match your local setup
 - Review and adjust model paths in `RAJ/config.py` before use
 
-## 📝 Citation
+## 🙏 Acknowledgments
 
-If you use this codebase in your research, please cite:
-
-```bibtex
-@software{lrmsafety,
-  title = {LRMsafety: A Toolkit for Evaluating Large Reasoning Model Safety},
-  author = {Your Name},
-  year = {2024},
-  url = {https://github.com/yourusername/LRMsafety}
-}
-```
+Parts of this codebase are derived from [UnsafeChain](https://github.com/mbzuai-nlp/UnsafeChain.git),  which designed to fine-tune large reasoning models to be safer and more factual. We thank the authors for their valuable contributions to the field of reasoning model safety.
 
 ## 📄 License
 
-[Specify your license here]
+[Apache-2.0 license]
 
 ## 🤝 Contributing
 
@@ -222,5 +214,5 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📧 Contact
 
-[Your contact information]
+[chenjianhao@whu.edu.cn]
 
